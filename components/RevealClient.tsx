@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { fmtFR } from '@/lib/estimates';
 
 declare global {
@@ -10,20 +11,10 @@ declare global {
 }
 
 export default function RevealClient() {
+  const pathname = usePathname();
+
   useEffect(() => {
     window.fmtFR = fmtFR;
-
-    const reveals = Array.from(document.querySelectorAll<HTMLElement>('.reveal'));
-    const counters = Array.from(document.querySelectorAll<HTMLElement>('[data-count]'));
-    const bars = Array.from(document.querySelectorAll<HTMLElement>('.bf[data-w]'));
-
-    counters.forEach((el) => {
-      const t = parseFloat(el.getAttribute('data-count') || '0');
-      const dec = parseInt(el.getAttribute('data-dec') || '0', 10);
-      const prefix = el.getAttribute('data-prefix') || '';
-      const suffix = el.getAttribute('data-suffix') || '';
-      el.textContent = prefix + fmtFR(t, dec) + suffix;
-    });
 
     function inView(el: HTMLElement, margin = 0.06) {
       const r = el.getBoundingClientRect();
@@ -52,20 +43,30 @@ export default function RevealClient() {
       requestAnimationFrame(step);
     }
 
+    // Pre-fill counters so the SSR/initial paint shows the final formatted value.
+    document.querySelectorAll<HTMLElement>('[data-count]').forEach((el) => {
+      const t = parseFloat(el.getAttribute('data-count') || '0');
+      const dec = parseInt(el.getAttribute('data-dec') || '0', 10);
+      const prefix = el.getAttribute('data-prefix') || '';
+      const suffix = el.getAttribute('data-suffix') || '';
+      el.textContent = prefix + fmtFR(t, dec) + suffix;
+    });
+
     function pass() {
-      reveals.forEach((e) => {
+      // Re-query each pass so newly mounted nodes (after route change) are picked up.
+      document.querySelectorAll<HTMLElement>('.reveal').forEach((e) => {
         if (!e.classList.contains('in') && inView(e, 0.04)) {
           const d = e.getAttribute('data-delay');
           if (d) e.style.animationDelay = d + 'ms';
           e.classList.add('in');
         }
       });
-      counters.forEach((e) => {
+      document.querySelectorAll<HTMLElement>('[data-count]').forEach((e) => {
         if (!(e as HTMLElement & { __counted?: boolean }).__counted && inView(e, 0.1)) {
           countUp(e);
         }
       });
-      bars.forEach((b) => {
+      document.querySelectorAll<HTMLElement>('.bf[data-w]').forEach((b) => {
         const ab = b as HTMLElement & { __filled?: boolean };
         if (!ab.__filled && inView(b, 0.06)) {
           ab.__filled = true;
@@ -101,7 +102,7 @@ export default function RevealClient() {
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }
