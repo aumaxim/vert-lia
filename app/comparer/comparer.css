@@ -1,0 +1,21 @@
+.task-tab {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 15px;
+  padding: 11px 20px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: .16s;
+}
+.task-tab:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.task-tab.is-active {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
