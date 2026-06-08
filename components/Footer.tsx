@@ -23,14 +23,19 @@ export default function Footer() {
           </div>
           <div className="footer-col">
             <h4>À propos</h4>
-            <Link href="/sources">Sources &amp; méthode</Link>
             <Link href="/comprendre">Lexique</Link>
           </div>
         </div>
         <div className="footer-bottom">
           <span>
-            Projet Ingénieur citoyen · 2025 — chiffres = ordres de grandeur estimés, sources
-            vérifiables.
+            Projet Ingénieur citoyen · 2025 — chiffres = ordres de grandeur estimés,{' '}
+            <Link
+              href="/sources"
+              style={{ opacity: 0.55, textDecoration: 'underline', textDecorationStyle: 'dotted' }}
+            >
+              sources vérifiables
+            </Link>
+            .
           </span>
           <span className="mono">Vert l&apos;IA ?</span>
         </div>
