@@ -2,6 +2,15 @@
 
 import { useMemo, useState, type CSSProperties } from 'react';
 import {
+  MessageSquare,
+  Image as ImageIcon,
+  Video,
+  Car,
+  Smartphone,
+  Lightbulb,
+  Droplet,
+} from 'lucide-react';
+import {
   OP,
   CAR_G_PER_KM,
   PHONE_WH,
@@ -121,8 +130,8 @@ export default function CalculateurClient() {
 
             <div className="ctrl">
               <div className="ctrl-head">
-                <span>
-                  💬 Requêtes texte <span className="ctrl-sub">par jour</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 9 }}>
+                  <MessageSquare size={18} strokeWidth={2.2} className="t-green" /> Requêtes texte <span className="ctrl-sub">par jour</span>
                 </span>
                 <span className="ctrl-val">{text}</span>
               </div>
@@ -138,8 +147,8 @@ export default function CalculateurClient() {
 
             <div className="ctrl">
               <div className="ctrl-head">
-                <span>
-                  🖼️ Images générées <span className="ctrl-sub">par semaine</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 9 }}>
+                  <ImageIcon size={18} strokeWidth={2.2} className="t-amber" /> Images générées <span className="ctrl-sub">par semaine</span>
                 </span>
                 <span className="ctrl-val">{img}</span>
               </div>
@@ -155,8 +164,8 @@ export default function CalculateurClient() {
 
             <div className="ctrl">
               <div className="ctrl-head">
-                <span>
-                  🎬 Vidéos IA <span className="ctrl-sub">par mois</span>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 9 }}>
+                  <Video size={18} strokeWidth={2.2} className="t-coral" /> Vidéos IA <span className="ctrl-sub">par mois</span>
                 </span>
                 <span className="ctrl-val">{vid}</span>
               </div>
@@ -215,7 +224,7 @@ export default function CalculateurClient() {
               </h3>
               <div className="bars">
                 <div className="bar">
-                  <div className="bl">🚗 Voiture therm.</div>
+                  <div className="bl" style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 7 }}><Car size={16} strokeWidth={2.2} /> Voiture therm.</div>
                   <div className="bt">
                     <div
                       className="bf coral"
@@ -227,7 +236,7 @@ export default function CalculateurClient() {
                   </div>
                 </div>
                 <div className="bar">
-                  <div className="bl">📱 Charges tél.</div>
+                  <div className="bl" style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 7 }}><Smartphone size={16} strokeWidth={2.2} /> Charges tél.</div>
                   <div className="bt">
                     <div
                       className="bf green"
@@ -237,7 +246,7 @@ export default function CalculateurClient() {
                   <div className="bv green">{fmtFR(r.phone, 0)}×</div>
                 </div>
                 <div className="bar">
-                  <div className="bl">💡 Ampoule LED</div>
+                  <div className="bl" style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 7 }}><Lightbulb size={16} strokeWidth={2.2} /> Ampoule LED</div>
                   <div className="bt">
                     <div
                       className="bf amber"
@@ -249,7 +258,7 @@ export default function CalculateurClient() {
                   </div>
                 </div>
                 <div className="bar">
-                  <div className="bl">💧 Eau (refroid.)</div>
+                  <div className="bl" style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 7 }}><Droplet size={16} strokeWidth={2.2} /> Eau (refroid.)</div>
                   <div className="bt">
                     <div
                       className="bf cyan"

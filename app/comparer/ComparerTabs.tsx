@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
+import { MessageSquare, Image as ImageIcon, Video } from 'lucide-react';
 
 type TaskKey = 'texte' | 'image' | 'video';
 
@@ -10,10 +11,10 @@ const DATA: Record<TaskKey, { energy: string; co2: string; equiv: string }> = {
   video: { energy: '~1 000 Wh', co2: '~400 g', equiv: '≈ ~30 min de four électrique' },
 };
 
-const TABS: { key: TaskKey; label: string }[] = [
-  { key: 'texte', label: '💬 Texte' },
-  { key: 'image', label: '🖼️ Image' },
-  { key: 'video', label: '🎬 Vidéo 5 s' },
+const TABS: { key: TaskKey; label: string; icon: ReactNode }[] = [
+  { key: 'texte', label: 'Texte', icon: <MessageSquare size={16} strokeWidth={2.2} /> },
+  { key: 'image', label: 'Image', icon: <ImageIcon size={16} strokeWidth={2.2} /> },
+  { key: 'video', label: 'Vidéo 5 s', icon: <Video size={16} strokeWidth={2.2} /> },
 ];
 
 export default function ComparerTabs() {
@@ -28,7 +29,9 @@ export default function ComparerTabs() {
             key={t.key}
             className={`task-tab${active === t.key ? ' is-active' : ''}`}
             onClick={() => setActive(t.key)}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}
           >
+            {t.icon}
             {t.label}
           </button>
         ))}

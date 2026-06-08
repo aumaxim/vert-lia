@@ -1,3 +1,4 @@
+import { ArrowUpRight } from 'lucide-react';
 import './sources.css';
 
 export const metadata = {
@@ -222,7 +223,7 @@ export default function Sources() {
             >
               <h3 className="h3" style={{ fontSize: 18 }}>
                 MIT Technology Review — AI energy footprint{' '}
-                <span className="t-green">↗</span>
+                <ArrowUpRight size={16} strokeWidth={2.4} className="t-green" style={{ display: 'inline', verticalAlign: '-3px' }} />
               </h3>
               <p style={{ color: 'var(--muted)', fontSize: 14, marginTop: 6 }}>
                 Enquête de référence (mai 2025) sur l&apos;énergie de l&apos;IA, texte / image / vidéo.
@@ -236,7 +237,7 @@ export default function Sources() {
               rel="noopener"
             >
               <h3 className="h3" style={{ fontSize: 18 }}>
-                Sustainability by Numbers — H. Ritchie <span className="t-green">↗</span>
+                Sustainability by Numbers — H. Ritchie <ArrowUpRight size={16} strokeWidth={2.4} className="t-green" style={{ display: 'inline', verticalAlign: '-3px' }} />
               </h3>
               <p style={{ color: 'var(--muted)', fontSize: 14, marginTop: 6 }}>
                 Synthèse des estimations par requête, image et vidéo, avec leurs incertitudes.
@@ -250,7 +251,7 @@ export default function Sources() {
             >
               <h3 className="h3" style={{ fontSize: 18 }}>
                 « Power Hungry Processing » — Hugging Face / CMU{' '}
-                <span className="t-green">↗</span>
+                <ArrowUpRight size={16} strokeWidth={2.4} className="t-green" style={{ display: 'inline', verticalAlign: '-3px' }} />
               </h3>
               <p style={{ color: 'var(--muted)', fontSize: 14, marginTop: 6 }}>
                 Étude mesurant l&apos;énergie par tâche : l&apos;image, la plus gourmande, ≈ une
@@ -266,7 +267,7 @@ export default function Sources() {
             >
               <h3 className="h3" style={{ fontSize: 18 }}>
                 Epoch AI — How much energy does ChatGPT use?{' '}
-                <span className="t-green">↗</span>
+                <ArrowUpRight size={16} strokeWidth={2.4} className="t-green" style={{ display: 'inline', verticalAlign: '-3px' }} />
               </h3>
               <p style={{ color: 'var(--muted)', fontSize: 14, marginTop: 6 }}>
                 Estimation ~0,3 Wh par requête texte et mise en perspective à l&apos;échelle

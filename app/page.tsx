@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Zap, Smartphone } from 'lucide-react';
 import './home.css';
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
         </div>
         <div className="wrap" style={{ position: 'relative', zIndex: 1 }}>
           <div className="badge reveal" style={{ marginBottom: 24 }}>
-            ⚡ Le coût caché de l&apos;intelligence artificielle
+            <Zap size={14} strokeWidth={2.5} className="t-amber" /> Le coût caché de l&apos;intelligence artificielle
           </div>
           <h1 className="h1 reveal" data-delay="60" style={{ marginBottom: 22 }}>
             Ton IA consomme
@@ -49,7 +50,7 @@ export default function Home() {
             style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}
           >
             <Link className="btn btn-pri" href="/chat">
-              ⚡ Essayer la démo live →
+              <Zap size={18} strokeWidth={2.5} /> Essayer la démo live →
             </Link>
             <Link className="btn btn-ghost" href="/calculateur">
               Calculer mon impact
@@ -89,7 +90,7 @@ export default function Home() {
             <div className="pill amber reveal" data-delay="90">
               <div className="ico">Image · 1 génération</div>
               <div className="pn">
-                jusqu&apos;à ~1 <span style={{ fontSize: 24 }}>charge 📱</span>
+                jusqu&apos;à ~1 <span style={{ fontSize: 24, display: 'inline-flex', alignItems: 'center', gap: 6 }}>charge <Smartphone size={22} strokeWidth={2.2} /></span>
               </div>
               <div className="pl">
                 Générer une image peut coûter autant qu&apos;une charge complète de smartphone —
@@ -174,7 +175,7 @@ export default function Home() {
                     Un data center est un immense bâtiment rempli de serveurs qui stockent et
                     traitent les données — dont celles de l&apos;IA. Il consomme beaucoup
                     d&apos;électricité et doit être refroidi en permanence.
-                    <span className="mb-cost">⚡ 0,4 Wh · 3 g CO₂ · ~410 tokens</span>
+                    <span className="mb-cost"><Zap size={12} strokeWidth={2.5} style={{ verticalAlign: '-2px' }} /> 0,4 Wh · 3 g CO₂ · ~410 tokens</span>
                   </div>
                 </div>
                 <div className="mock-meter">
@@ -185,7 +186,7 @@ export default function Home() {
                   <div className="mm-bar">
                     <span style={{ width: '24%' }}></span>
                   </div>
-                  <div className="mm-eq">≈ 8&nbsp;% 📱</div>
+                  <div className="mm-eq" style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>≈ 8&nbsp;% <Smartphone size={14} strokeWidth={2.2} /></div>
                 </div>
               </div>
             </div>

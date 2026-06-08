@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Zap, Factory, Droplet, Scale } from 'lucide-react';
 
 export const metadata = {
   title: "Comprendre l'impact — Watt l'IA ?",
@@ -41,8 +42,8 @@ export default function Comprendre() {
           <div className="pill-grid">
             <div className="pill green reveal">
               <div className="ico">Ressource 1</div>
-              <div className="h3" style={{ margin: '14px 0 8px', fontSize: 26 }}>
-                ⚡ L&apos;électricité
+              <div className="h3" style={{ margin: '14px 0 8px', fontSize: 26, display: 'flex', alignItems: 'center', gap: 10 }}>
+                <Zap size={26} strokeWidth={2.2} className="t-green" /> L&apos;électricité
               </div>
               <div className="pl">
                 Les puces (GPU) qui font « réfléchir » l&apos;IA consomment énormément de courant.
@@ -51,8 +52,8 @@ export default function Comprendre() {
             </div>
             <div className="pill amber reveal" data-delay="90">
               <div className="ico">Ressource 2</div>
-              <div className="h3" style={{ margin: '14px 0 8px', fontSize: 26 }}>
-                🏭 Le CO₂
+              <div className="h3" style={{ margin: '14px 0 8px', fontSize: 26, display: 'flex', alignItems: 'center', gap: 10 }}>
+                <Factory size={26} strokeWidth={2.2} className="t-amber" /> Le CO₂
               </div>
               <div className="pl">
                 Si cette électricité vient du gaz ou du charbon, elle émet du carbone.
@@ -61,8 +62,8 @@ export default function Comprendre() {
             </div>
             <div className="pill cyan reveal" data-delay="180">
               <div className="ico">Ressource 3</div>
-              <div className="h3" style={{ margin: '14px 0 8px', fontSize: 26 }}>
-                💧 L&apos;eau
+              <div className="h3" style={{ margin: '14px 0 8px', fontSize: 26, display: 'flex', alignItems: 'center', gap: 10 }}>
+                <Droplet size={26} strokeWidth={2.2} className="t-cyan" /> L&apos;eau
               </div>
               <div className="pl">
                 Les serveurs chauffent. Beaucoup de centres utilisent de l&apos;eau douce qui
@@ -300,8 +301,8 @@ export default function Comprendre() {
               padding: 44,
             }}
           >
-            <h2 className="h2" style={{ fontSize: 34, marginBottom: 14 }}>
-              ⚖️ Garder le sens des proportions
+            <h2 className="h2" style={{ fontSize: 34, marginBottom: 14, display: 'flex', alignItems: 'center', gap: 14 }}>
+              <Scale size={32} strokeWidth={2.2} className="t-green" /> Garder le sens des proportions
             </h2>
             <p className="lead" style={{ color: 'var(--ink-soft)', maxWidth: 760 }}>
               Une requête texte reste minuscule : une recherche web consomme déjà très peu, et

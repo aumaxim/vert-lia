@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { MessageSquare, Image as ImageIcon, Video } from 'lucide-react';
 import ComparerTabs from './ComparerTabs';
 import './comparer.css';
 
@@ -136,7 +137,7 @@ export default function Comparer() {
               className="card reveal"
               style={{ padding: 30, borderTop: '4px solid var(--green)' }}
             >
-              <div className="h3 t-green">💬 100 requêtes texte</div>
+              <div className="h3 t-green" style={{ display: 'flex', alignItems: 'center', gap: 10 }}><MessageSquare size={22} strokeWidth={2.2} /> 100 requêtes texte</div>
               <ul
                 style={{
                   listStyle: 'none',
@@ -179,7 +180,7 @@ export default function Comparer() {
               data-delay="90"
               style={{ padding: 30, borderTop: '4px solid var(--amber)' }}
             >
-              <div className="h3 t-amber">🖼️ 100 images IA</div>
+              <div className="h3 t-amber" style={{ display: 'flex', alignItems: 'center', gap: 10 }}><ImageIcon size={22} strokeWidth={2.2} /> 100 images IA</div>
               <ul
                 style={{
                   listStyle: 'none',
@@ -222,7 +223,7 @@ export default function Comparer() {
               data-delay="180"
               style={{ padding: 30, borderTop: '4px solid var(--coral)' }}
             >
-              <div className="h3 t-coral">🎬 1 vidéo IA (5 s)</div>
+              <div className="h3 t-coral" style={{ display: 'flex', alignItems: 'center', gap: 10 }}><Video size={22} strokeWidth={2.2} /> 1 vidéo IA (5 s)</div>
               <ul
                 style={{
                   listStyle: 'none',

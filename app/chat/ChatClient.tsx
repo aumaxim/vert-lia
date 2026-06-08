@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { Zap, RotateCcw } from 'lucide-react';
 import {
   BASE_TOKENS,
   BASE_WH,
@@ -23,12 +24,12 @@ type DisplayMsg = {
 
 const INITIAL: DisplayMsg = {
   role: 'ai',
-  text: 'Salut ! Pose-moi une question. Tu verras à droite l’estimation de ce que chaque réponse consomme. 🌱',
+  text: 'Salut ! Pose-moi une question. Tu verras à droite l’estimation de ce que chaque réponse consomme.',
 };
 
 const RESET: DisplayMsg = {
   role: 'ai',
-  text: 'Session réinitialisée. Repars de zéro ! 🌱',
+  text: 'Session réinitialisée. Repars de zéro !',
 };
 
 const SUGGESTIONS = [
@@ -163,8 +164,8 @@ export default function ChatClient() {
                 <strong>Assistant IA</strong>
                 <span className="model-tag mono">modèle efficace · type Haiku</span>
               </div>
-              <button className="reset-btn" onClick={reset}>
-                ↺ Réinitialiser
+              <button className="reset-btn" onClick={reset} style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                <RotateCcw size={13} strokeWidth={2.4} /> Réinitialiser
               </button>
             </div>
 
@@ -182,7 +183,7 @@ export default function ChatClient() {
                       <>
                         <br />
                         <span className="cost-tag">
-                          ⚡ {fmtWh(m.cost.wh)} · {fmtFR(m.cost.co2, 1)} g CO₂ · ~
+                          <Zap size={11} strokeWidth={2.6} style={{ verticalAlign: '-1px' }} /> {fmtWh(m.cost.wh)} · {fmtFR(m.cost.co2, 1)} g CO₂ · ~
                           {m.cost.tokens} tokens
                         </span>
                       </>

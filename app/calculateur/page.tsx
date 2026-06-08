@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Info } from 'lucide-react';
 import CalculateurClient from './CalculateurClient';
 import './calculateur.css';
 
@@ -25,7 +26,7 @@ export default function CalculateurPage() {
               alignItems: 'flex-start',
             }}
           >
-            <span style={{ fontSize: 22 }}>ℹ️</span>
+            <Info size={22} strokeWidth={2.2} style={{ flexShrink: 0, color: 'var(--cyan-d)' }} />
             <p
               style={{
                 fontSize: 14,

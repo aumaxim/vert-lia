@@ -1,47 +1,62 @@
 import Link from 'next/link';
+import {
+  Target,
+  Image as ImageIcon,
+  Wrench,
+  Repeat,
+  Search,
+  Package,
+  Globe,
+  MessageSquare,
+  CheckCircle2,
+  Circle,
+  type LucideIcon,
+} from 'lucide-react';
 
 export const metadata = {
   title: "Agir au quotidien — Watt l'IA ?",
 };
 
-const GESTES = [
+type Geste = { Icon: LucideIcon; title: string; text: string };
+
+const GESTES: Geste[] = [
   {
-    emoji: '🎯',
+    Icon: Target,
     title: 'Soigne ton prompt',
     text: 'Une question claire évite 5 allers-retours. Moins de régénérations = moins de calcul.',
   },
   {
-    emoji: '🖼️',
+    Icon: ImageIcon,
     title: "Génère l'image en une fois",
     text: 'Évite de relancer 10 variantes. Choisis bien ta description avant de lancer.',
   },
   {
-    emoji: '🧰',
+    Icon: Wrench,
     title: 'Le bon outil pour la tâche',
     text: 'Pas besoin du plus gros modèle pour une question simple. Les petits modèles consomment beaucoup moins.',
   },
   {
-    emoji: '🔁',
+    Icon: Repeat,
     title: 'Réutilise plutôt que régénérer',
     text: "Garde et adapte une bonne réponse au lieu d'en relancer une nouvelle à chaque fois.",
   },
   {
-    emoji: '🔎',
-    title: 'IA ou simple recherche ?',
+    Icon: Search,
+    title: 'IA ou simple recherche ?',
     text: 'Pour une date ou une définition, une recherche classique suffit souvent — et coûte moins.',
   },
   {
-    emoji: '📦',
+    Icon: Package,
     title: 'Regroupe tes demandes',
     text: "Pose plusieurs questions liées dans un même échange plutôt qu'en multipliant les sessions.",
   },
   {
-    emoji: '🌍',
+    Icon: Globe,
     title: 'Renseigne-toi sur les fournisseurs',
     text: 'Certains alimentent leurs centres en énergie bas-carbone. La transparence progresse — demande-la.',
   },
   {
-    emoji: '💬',
+    Icon: MessageSquare,
     title: 'Partage ce que tu sais',
     text: "Comprendre l'impact, sans dramatiser, aide ton entourage à utiliser l'IA plus intelligemment.",
   },
@@ -102,10 +117,7 @@ export default function Agir() {
             >
               Le réflexe n°1
             </div>
-            <h2
-              className="h2"
-              style={{ color: '#fff', margin: '12px 0 12px', fontSize: 38 }}
-            >
+            <h2 className="h2" style={{ color: '#fff', margin: '12px 0 12px', fontSize: 38 }}>
               Réserve l&apos;image et la vidéo à ce qui compte
             </h2>
             <p style={{ fontSize: 19, opacity: 0.94, maxWidth: 720 }}>
@@ -140,7 +152,21 @@ export default function Agir() {
                   alignItems: 'flex-start',
                 }}
               >
-                <span style={{ fontSize: 30, lineHeight: 1 }}>{g.emoji}</span>
+                <span
+                  style={{
+                    flex: 'none',
+                    width: 44,
+                    height: 44,
+                    borderRadius: 12,
+                    background: 'var(--green-bg)',
+                    color: 'var(--green-d)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  <g.Icon size={22} strokeWidth={2.2} />
+                </span>
                 <div>
                   <h3 className="h3" style={{ fontSize: 19 }}>
                     {g.title}
@@ -186,25 +212,41 @@ export default function Agir() {
           <div className="card reveal" data-delay="100" style={{ padding: 30 }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
               <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                <span style={{ fontSize: 20 }}>✅</span>
+                <CheckCircle2
+                  size={20}
+                  strokeWidth={2.2}
+                  style={{ color: 'var(--green-d)', flexShrink: 0 }}
+                />
                 <span>
                   <strong>Gros effet :</strong> limiter vidéos &amp; images superflues
                 </span>
               </div>
               <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                <span style={{ fontSize: 20 }}>✅</span>
+                <CheckCircle2
+                  size={20}
+                  strokeWidth={2.2}
+                  style={{ color: 'var(--green-d)', flexShrink: 0 }}
+                />
                 <span>
                   <strong>Bon effet :</strong> éviter les régénérations en série
                 </span>
               </div>
               <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                <span style={{ fontSize: 20 }}>🟡</span>
+                <Circle
+                  size={20}
+                  strokeWidth={2.2}
+                  style={{ color: 'var(--amber-d)', flexShrink: 0, fill: 'var(--amber-bg)' }}
+                />
                 <span>
                   <strong>Effet faible :</strong> compter ses requêtes texte
                 </span>
               </div>
               <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                <span style={{ fontSize: 20 }}>⚪</span>
+                <Circle
+                  size={20}
+                  strokeWidth={2.2}
+                  style={{ color: 'var(--muted-2)', flexShrink: 0 }}
+                />
                 <span>
                   <strong>Effet négligeable :</strong> supprimer les « merci »
                 </span>
