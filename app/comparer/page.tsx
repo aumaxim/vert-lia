@@ -64,9 +64,9 @@ export default function Comparer() {
               <div className="bar">
                 <div className="bl">Recherche web</div>
                 <div className="bt">
-                  <div className="bf cyan" data-w="8%"></div>
+                  <div className="bf cyan" data-w="4%"></div>
                 </div>
-                <div className="bv cyan">0,3 Wh</div>
+                <div className="bv cyan">~0,03 Wh</div>
               </div>
               <div className="bar">
                 <div className="bl">Requête texte IA</div>
