@@ -1,0 +1,99 @@
+.ctrl { margin-bottom: 26px; }
+.ctrl-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 16px;
+}
+.ctrl-sub {
+  font-weight: 500;
+  color: var(--muted-2);
+  font-size: 13px;
+}
+.ctrl-val {
+  font-family: var(--mono);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--green-d);
+}
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--green);
+  border: 4px solid #fff;
+  box-shadow: 0 2px 8px rgba(18,40,28,0.25);
+  cursor: pointer;
+}
+input[type=range]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--green);
+  border: 4px solid #fff;
+  box-shadow: 0 2px 8px rgba(18,40,28,0.25);
+  cursor: pointer;
+}
+.presets {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 8px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line-2);
+}
+.preset {
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+  transition: .15s;
+}
+.preset:hover { border-color: var(--green); color: var(--green-d); }
+.result-card {
+  background: var(--cb);
+  border: 1.5px solid color-mix(in srgb, var(--c) 35%, transparent);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.rc-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.rc-num {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 1;
+  margin: 10px 0 6px;
+  color: var(--c);
+  letter-spacing: -0.02em;
+}
+.rc-sub { font-size: 14px; color: var(--muted); }
+@media (max-width: 920px) {
+  .calc-layout { grid-template-columns: 1fr !important; }
+  .calc-results { grid-template-columns: 1fr !important; }
+}
