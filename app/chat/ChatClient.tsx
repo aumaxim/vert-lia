@@ -69,10 +69,10 @@ export default function ChatClient() {
     setInput('');
     setIsTyping(true);
 
-    const reply = await sendMessage(nextHistory);
+    const result = await sendMessage(nextHistory);
     setIsTyping(false);
 
-    if (!reply) {
+    if (!result) {
       setMessages((m) => [
         ...m,
         {
@@ -85,10 +85,11 @@ export default function ChatClient() {
       return;
     }
 
+    const { reply, usage } = result;
     setHistory((h) => [...h, { role: 'assistant', content: reply }]);
 
-    const inTok = estTokens(text);
-    const outTok = estTokens(reply);
+    const inTok = usage?.input_tokens ?? estTokens(text);
+    const outTok = usage?.output_tokens ?? estTokens(reply);
     const totTok = inTok + outTok;
     const ratio = totTok / BASE_TOKENS;
     const wh = BASE_WH * ratio;
