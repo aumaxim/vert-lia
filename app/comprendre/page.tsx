@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Zap, Factory, Droplet, Scale } from 'lucide-react';
 
 export const metadata = {
-  title: "Comprendre l'impact — Watt l'IA ?",
+  title: "Comprendre l'impact — Vert l'IA ?",
 };
 
 export default function Comprendre() {

@@ -2,7 +2,7 @@ import { ArrowUpRight } from 'lucide-react';
 import './sources.css';
 
 export const metadata = {
-  title: "Sources & méthode — Watt l'IA ?",
+  title: "Sources & méthode — Vert l'IA ?",
 };
 
 export default function Sources() {
@@ -312,7 +312,7 @@ export default function Sources() {
               Un projet Ingénieur citoyen
             </h2>
             <p style={{ fontSize: 17, opacity: 0.9, maxWidth: 720 }}>
-              « Watt l&apos;IA ? » est un projet étudiant à vocation citoyenne : rendre visible et
+              « Vert l&apos;IA ? » est un projet étudiant à vocation citoyenne : rendre visible et
               compréhensible l&apos;impact écologique de l&apos;intelligence artificielle, pour un
               usage plus conscient — sans déni technophobe ni catastrophisme.
             </p>

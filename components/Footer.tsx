@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footer-top">
           <div>
             <div className="brand">
-              <span className="dot"></span>Watt l&apos;IA&nbsp;?
+              <span className="dot"></span>Vert l&apos;IA&nbsp;?
             </div>
             <p style={{ fontSize: 15, opacity: 0.85, maxWidth: 340 }}>
               Un projet citoyen pour comprendre l&apos;impact écologique de l&apos;intelligence
@@ -32,7 +32,7 @@ export default function Footer() {
             Projet Ingénieur citoyen · 2025 — chiffres = ordres de grandeur estimés, sources
             vérifiables.
           </span>
-          <span className="mono">Watt l&apos;IA ?</span>
+          <span className="mono">Vert l&apos;IA ?</span>
         </div>
       </div>
     </footer>

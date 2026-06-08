@@ -5,7 +5,7 @@ import RevealClient from '@/components/RevealClient';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: "Watt l'IA ? — Le coût écologique caché de l'intelligence artificielle",
+  title: "Vert l'IA ? — Le coût écologique caché de l'intelligence artificielle",
   description:
     "Comprendre, comparer et calculer l'impact énergétique, carbone et hydrique de l'IA. Projet citoyen.",
 };

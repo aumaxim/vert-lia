@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 export const metadata = {
-  title: "Agir au quotidien — Watt l'IA ?",
+  title: "Agir au quotidien — Vert l'IA ?",
 };
 
 type Geste = { Icon: LucideIcon; title: string; text: string };

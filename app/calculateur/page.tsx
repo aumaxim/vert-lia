@@ -4,7 +4,7 @@ import CalculateurClient from './CalculateurClient';
 import './calculateur.css';
 
 export const metadata = {
-  title: "Calculateur — Watt l'IA ?",
+  title: "Calculateur — Vert l'IA ?",
 };
 
 export default function CalculateurPage() {

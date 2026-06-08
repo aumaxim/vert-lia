@@ -28,7 +28,7 @@ export default function Header() {
     <header className="site-header">
       <nav className="nav">
         <Link className="brand" href="/">
-          <span className="dot"></span>Watt l&apos;IA&nbsp;?
+          <span className="dot"></span>Vert l&apos;IA&nbsp;?
         </Link>
         <div className={`nav-links${open ? ' open' : ''}`}>
           {NAV.map((item) => {

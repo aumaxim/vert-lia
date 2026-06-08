@@ -4,7 +4,7 @@ import ComparerTabs from './ComparerTabs';
 import './comparer.css';
 
 export const metadata = {
-  title: "Comparer les IA — Watt l'IA ?",
+  title: "Comparer les IA — Vert l'IA ?",
 };
 
 export default function Comparer() {
