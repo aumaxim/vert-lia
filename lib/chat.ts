@@ -6,9 +6,14 @@ export type ChatResult = {
   usage: { input_tokens?: number; output_tokens?: number } | null;
 };
 
+// Next.js ne préfixe PAS les fetch() avec basePath (uniquement <Link>/router).
+// Quand l'app tourne sous un sous-chemin (NEXT_PUBLIC_BASE_PATH=/projet-ing-maxime),
+// il faut préfixer manuellement sinon le POST part sur la racine du domaine.
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
 export async function sendMessage(history: Msg[]): Promise<ChatResult | null> {
   try {
-    const res = await fetch('/api/chat', {
+    const res = await fetch(`${BASE_PATH}/api/chat`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ history }),
