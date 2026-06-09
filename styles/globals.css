@@ -69,7 +69,7 @@ a { color: inherit; text-decoration: none; }
 }
 .nav {
   display: flex; align-items: center; justify-content: space-between;
-  height: 72px; max-width: var(--maxw); margin: 0 auto; padding: 0 28px;
+  height: 96px; max-width: var(--maxw); margin: 0 auto; padding: 0 28px;
 }
 .brand { display: flex; align-items: center; gap: 11px; font-family: var(--display); font-weight: 800; font-size: 20px; letter-spacing: -0.02em; white-space: nowrap; }
 .brand .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(18,181,106,0.16); flex: none; }
@@ -170,7 +170,7 @@ a { color: inherit; text-decoration: none; }
   .pill-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; gap: 28px; }
   .nav-links { display: none; }
-  .nav-links.open { display: flex; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; background: var(--surface); padding: 14px; border-bottom: 1px solid var(--line); gap: 4px; }
+  .nav-links.open { display: flex; position: absolute; top: 96px; left: 0; right: 0; flex-direction: column; background: var(--surface); padding: 14px; border-bottom: 1px solid var(--line); gap: 4px; }
   .nav-burger { display: inline-flex; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; }
   .nav-burger span { width: 22px; height: 2px; background: var(--ink); border-radius: 2px; }
   .bar { grid-template-columns: 110px 1fr 70px; gap: 10px; }

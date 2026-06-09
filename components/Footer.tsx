@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -7,7 +8,20 @@ export default function Footer() {
         <div className="footer-top">
           <div>
             <div className="brand">
-              <span className="dot"></span>Vert l&apos;IA&nbsp;?
+              <Image
+                src="/logo.png"
+                alt="Vert l'IA ?"
+                width={300}
+                height={200}
+                style={{
+                  height: 120,
+                  width: 'auto',
+                  display: 'block',
+                  background: '#fff',
+                  borderRadius: 16,
+                  padding: '10px 20px',
+                }}
+              />
             </div>
             <p style={{ fontSize: 15, opacity: 0.85, maxWidth: 340 }}>
               Un projet citoyen pour comprendre l&apos;impact écologique de l&apos;intelligence
@@ -37,7 +51,7 @@ export default function Footer() {
             </Link>
             .
           </span>
-          <span className="mono">Vert l&apos;IA ?</span>
+          <span className="mono">© Vert l&apos;IA ?</span>
         </div>
       </div>
     </footer>

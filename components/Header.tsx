@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
@@ -27,8 +28,15 @@ export default function Header() {
   return (
     <header className="site-header">
       <nav className="nav">
-        <Link className="brand" href="/">
-          <span className="dot"></span>Vert l&apos;IA&nbsp;?
+        <Link className="brand" href="/" aria-label="Vert l'IA ? — Accueil">
+          <Image
+            src="/logo.png"
+            alt="Vert l'IA ?"
+            width={300}
+            height={200}
+            priority
+            style={{ height: 78, width: 'auto', display: 'block' }}
+          />
         </Link>
         <div className={`nav-links${open ? ' open' : ''}`}>
           {NAV.map((item) => {

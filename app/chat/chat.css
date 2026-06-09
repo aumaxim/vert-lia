@@ -161,7 +161,7 @@
 
 .meter {
   position: sticky;
-  top: 92px;
+  top: 116px;
   display: flex;
   flex-direction: column;
   gap: 14px;
